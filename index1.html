@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Siddhant Singh. AI and machine learning builder and Master of IT student in Melbourne, open for internships.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Siddhant Singh | AI &amp; ML Portfolio">
+<meta property="og:description" content="AI and machine learning projects by Siddhant Singh, Master of IT student at RMIT, Melbourne. Open for internships.">
+<title>Siddhant Singh Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: minimal editorial poster. Huge condensed name left, a live signal-and-model dot graphic right, tiny spaced labels with short rules, pill buttons, quiet list-style sections. */
+:root {
+  --bg: #04050d;
+  --bg-2: #090b1c;
+  --fg: #f1f3ff;
+  --muted: #8b91b3;
+  --line: rgba(255,255,255,.12);
+  --blue: #3a52ff;
+  --blue-soft: #7b92ff;
+  --lime: #d7f542;
+  --font-display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --beat: 2.143s; /* four beats at 112 BPM */
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+  background-image:
+    radial-gradient(52rem 34rem at 95% 8%, rgba(58,82,255,.30), transparent 62%),
+    radial-gradient(40rem 26rem at -5% 70%, rgba(58,82,255,.12), transparent 60%);
+  background-repeat: no-repeat;
+}
+.wrap { max-width: 1120px; margin: 0 auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 6px; }
+
+.micro { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin: 0; }
+.rule { display: block; width: 28px; height: 1px; background: var(--muted); margin-top: 14px; }
+.open { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; color: var(--lime); border: 1px solid rgba(215,245,66,.4); border-radius: 999px; padding: 9px 18px; margin: 0; }
+.live { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); animation: live 2s ease-out infinite; }
+@keyframes live { 0% { box-shadow: 0 0 0 0 rgba(215,245,66,.55); } 100% { box-shadow: 0 0 0 10px rgba(215,245,66,0); } }
+
+/* nav */
+nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 26px 0; flex-wrap: wrap; }
+.mark { font-family: var(--font-display); font-size: 20px; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; }
+.mark span { color: var(--lime); }
+nav ul { display: flex; gap: 34px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+nav ul a { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--fg); text-decoration: none; font-weight: 500; opacity: .75; }
+nav ul a:hover { opacity: 1; color: var(--lime); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center; padding: 28px 0 40px; min-height: 560px; }
+.hero-copy { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+.hi { font-family: var(--font-serif); font-style: italic; font-size: clamp(30px, 4.4vw, 54px); line-height: 1; color: var(--lime); margin: 0 0 -8px; }
+h1 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; margin: 0; font-size: clamp(64px, 13.5vw, 168px); line-height: .88; letter-spacing: .005em; }
+h1 .line { display: block; }
+h1 .outline { color: transparent; -webkit-text-stroke: 2px var(--blue-soft); }
+.tag { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--fg); opacity: .85; margin: 0; max-width: 34ch; line-height: 1.9; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 6px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 12px; padding: 14px 24px; border-radius: 999px;
+  font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; border: 1px solid var(--fg); background: transparent; color: var(--fg);
+}
+.pill:hover { border-color: var(--lime); color: var(--lime); }
+.pill.solid { background: var(--lime); border-color: var(--lime); color: #0a0d00; }
+.pill.solid:hover { background: #e6ff6a; color: #0a0d00; }
+.play-dot { width: 26px; height: 26px; border-radius: 50%; border: 1px solid currentColor; display: grid; place-items: center; font-size: 8px; padding-left: 1px; }
+.pill[aria-pressed="true"] { border-color: var(--lime); color: var(--lime); }
+
+/* signal graphic */
+.viz-wrap { display: flex; flex-direction: column; gap: 18px; width: 100%; max-width: 520px; justify-self: center; }
+.viz { display: block; width: 100%; aspect-ratio: 1 / 1; }
+.viz-cap { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 14px; }
+.viz-cap .micro:first-child { color: var(--blue-soft); }
+
+/* stats strip */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stat { padding: 22px 20px 22px 0; display: flex; flex-direction: column; gap: 4px; }
+.stat + .stat { padding-left: 20px; border-left: 1px solid var(--line); }
+.stat b { font-family: var(--font-body); font-weight: 300; font-size: 30px; letter-spacing: -.01em; line-height: 1.1; }
+.stat .micro { font-size: 10px; }
+
+/* sections */
+section { padding: 96px 0 0; }
+.sec-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 36px; }
+h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(40px, 7vw, 84px); line-height: .95; margin: 0; letter-spacing: .005em; text-wrap: balance; }
+h2 em { font-family: var(--font-serif); font-style: italic; text-transform: none; color: var(--lime); font-size: 1.05em; letter-spacing: 0; }
+
+/* projects */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.row { display: grid; grid-template-columns: 64px minmax(0, 1.1fr) minmax(0, 1fr) auto; gap: 24px; align-items: start; padding: 32px 0; border-bottom: 1px solid var(--line); transition: padding .25s; }
+.row:hover { padding-left: 10px; }
+.row:hover .r-title { color: var(--lime); }
+.r-no { font-size: 12px; letter-spacing: .2em; color: var(--muted); padding-top: 12px; }
+.r-title { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(30px, 4.2vw, 52px); line-height: 1; margin: 0; transition: color .2s; overflow-wrap: anywhere; }
+.r-desc { margin: 0 0 14px; color: #c9cde6; font-weight: 300; font-size: 16px; max-width: 46ch; }
+.r-tags { margin: 0; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-soft); line-height: 1.9; }
+.r-go { align-self: center; }
+.arrow { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; text-decoration: none; font-size: 18px; transition: all .2s; }
+.arrow:hover { background: var(--lime); border-color: var(--lime); color: #0a0d00; }
+
+/* about */
+.about { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.statement { font-family: var(--font-serif); font-size: clamp(26px, 3.6vw, 42px); line-height: 1.2; margin: 0 0 24px; font-weight: 400; }
+.statement i { color: var(--lime); }
+.about p.body { margin: 0 0 14px; font-weight: 300; color: #c9cde6; max-width: 56ch; }
+.facts { margin: 0; border-top: 1px solid var(--line); }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.facts dt { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding-top: 3px; }
+.facts dd { margin: 0; text-align: right; font-weight: 400; }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.skills h3 { margin: 0 0 18px; }
+.skills ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.skills li { padding: 13px 0; border-bottom: 1px solid var(--line); font-weight: 300; font-size: 18px; }
+
+/* education */
+.tl { list-style: none; margin: 0 0 56px; padding: 0; border-top: 1px solid var(--line); }
+.tl li { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.when { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding-top: 6px; }
+.tl h3 { margin: 0 0 2px; font-weight: 500; font-size: 20px; }
+.tl p { margin: 0; color: var(--muted); font-weight: 300; }
+.sub { margin: 0 0 14px; }
+
+/* contact */
+.contact { padding: 96px 0 0; }
+.big { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(56px, 12vw, 160px); line-height: .9; margin: 14px 0 28px; }
+.big em { font-family: var(--font-serif); font-style: italic; text-transform: none; color: var(--lime); font-size: 1em; }
+.mail { font-size: clamp(18px, 3vw, 30px); font-weight: 300; margin: 0 0 28px; overflow-wrap: anywhere; user-select: all; }
+footer { margin-top: 96px; padding: 28px 0 44px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 12px; }
+  .viz-wrap { max-width: 400px; order: -1; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(3) { padding-left: 0; border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .row { grid-template-columns: 40px minmax(0, 1fr) auto; }
+  .row .r-body { grid-column: 2 / 3; }
+  .r-go { grid-column: 3; grid-row: 1; }
+  .about, .skills { grid-template-columns: 1fr; gap: 36px; }
+  .tl li { grid-template-columns: 1fr; gap: 2px; }
+  nav ul { gap: 20px; }
+}
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .row { grid-template-columns: 1fr auto; gap: 14px; }
+  .r-no { grid-column: 1 / -1; padding-top: 0; }
+  .row .r-body { grid-column: 1 / -1; }
+  .r-go { grid-column: 2; grid-row: 2; }
+  .row .r-head { grid-column: 1; grid-row: 2; }
+  h1 .outline { -webkit-text-stroke-width: 1.5px; }
+  section { padding-top: 72px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .live { animation: none; }
+  .row, .row:hover { transition: none; }
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <nav aria-label="Primary">
+    <a class="mark" href="#top">S<span>.</span>Singh</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-copy">
+      <p class="open"><span class="live"></span>Open for internships</p>
+      <p class="hi">Hi, I'm</p>
+      <h1><span class="line">Siddhant</span><span class="line outline">Singh</span></h1>
+      <p class="tag">Data. Machine learning.<br>Decisions people can act on.</p>
+      <div class="actions">
+        <a class="pill solid" href="#projects">View projects <span aria-hidden="true">&rarr;</span></a>
+        <button class="pill" id="beat" type="button" aria-pressed="false"><span class="play-dot" id="dot" aria-hidden="true">&#9654;</span><span id="beatlabel">Play slow house</span></button>
+      </div>
+    </div>
+    <div class="viz-wrap">
+      <canvas class="viz" id="viz" role="img" aria-label="A field of dots rising and falling like a sound signal, with a smooth line fitted through it"></canvas>
+      <div class="viz-cap"><span class="micro">Dots are the signal. The line is the model.</span></div>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><b>04</b><span class="micro">Projects on GitHub</span></div>
+    <div class="stat"><b>Python</b><span class="micro">Main language</span></div>
+    <div class="stat"><b>RMIT</b><span class="micro">Master of IT</span></div>
+    <div class="stat"><b>Dec 2027</b><span class="micro">Graduating</span></div>
+  </div>
+
+  <section id="projects">
+    <div class="sec-head"><p class="micro">Selected work<span class="rule"></span></p><h2>Pro<em>jects</em></h2></div>
+    <ol class="rows">
+      <li class="row">
+        <span class="r-no">01</span>
+        <div class="r-head"><h3 class="r-title">Personalised Music Recommender</h3></div>
+        <div class="r-body">
+          <p class="r-desc">A music recommendation website that suggests tracks through genre-based similarity matching, with Spotify integration.</p>
+          <p class="r-tags">Recommendation / Similarity matching / Spotify / HTML</p>
+        </div>
+        <div class="r-go"><a class="arrow" href="https://github.com/siddhant8444/Personalised-Music-Recommender" target="_blank" rel="noopener" aria-label="View Personalised Music Recommender on GitHub">&#8599;</a></div>
+      </li>
+      <li class="row">
+        <span class="r-no">02</span>
+        <div class="r-head"><h3 class="r-title">Dine-Flow</h3></div>
+        <div class="r-body">
+          <p class="r-desc">A web project built in HTML. Full write-up coming soon.</p>
+          <p class="r-tags">Web / HTML</p>
+        </div>
+        <div class="r-go"><a class="arrow" href="https://github.com/siddhant8444/Dine-Flow" target="_blank" rel="noopener" aria-label="View Dine-Flow on GitHub">&#8599;</a></div>
+      </li>
+      <li class="row">
+        <span class="r-no">03</span>
+        <div class="r-head"><h3 class="r-title">MCP AI Data Assistant</h3></div>
+        <div class="r-body">
+          <p class="r-desc">An AI chatbot for data analysis and prediction. Ask questions about a dataset in plain language and get analysis back, built around the Model Context Protocol.</p>
+          <p class="r-tags">AI assistant / MCP / Data analysis / Python</p>
+        </div>
+        <div class="r-go"><a class="arrow" href="https://github.com/siddhant8444/MCP-AI-Data-assistant" target="_blank" rel="noopener" aria-label="View MCP AI Data Assistant on GitHub">&#8599;</a></div>
+      </li>
+      <li class="row">
+        <span class="r-no">04</span>
+        <div class="r-head"><h3 class="r-title">Food Delivery Time Prediction</h3></div>
+        <div class="r-body">
+          <p class="r-desc">A machine learning model that predicts how long a food delivery will take, using a Random Forest regressor. A Streamlit app lets anyone enter an order and get an estimate.</p>
+          <p class="r-tags">Machine learning / Random Forest / Streamlit / Python</p>
+        </div>
+        <div class="r-go"><a class="arrow" href="https://github.com/siddhant8444/food-delivery-time-prediction-ml" target="_blank" rel="noopener" aria-label="View Food Delivery Time Prediction on GitHub">&#8599;</a></div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="about">
+    <div class="sec-head"><p class="micro">Background<span class="rule"></span></p><h2>Ab<em>out</em></h2></div>
+    <div class="about">
+      <div>
+        <p class="statement">I like building AI that <i>solves real problems.</i></p>
+        <p class="body">Computer Science engineer specialising in AI and machine learning, now completing a Master of IT at RMIT in Melbourne. I build intelligent systems that turn data into predictions, recommendations and answers people can act on.</p>
+        <p class="body">I'm looking for an internship where AI, analytics and product strategy come together.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Melbourne, Australia</dd></div>
+        <div><dt>Studying</dt><dd>Master of IT, RMIT</dd></div>
+        <div><dt>Focus</dt><dd>AI, ML, data-led product</dd></div>
+        <div><dt>Looking for</dt><dd>Internship</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><p class="micro">Toolkit<span class="rule"></span></p><h2>Sk<em>ills</em></h2></div>
+    <div class="skills">
+      <div><h3 class="micro sub">Build</h3><ul><li>Python</li><li>Web development</li><li>Data science</li><li>Version control</li></ul></div>
+      <div><h3 class="micro sub">AI and ML</h3><ul><li>Machine learning</li><li>Predictive modelling</li><li>Recommendation systems</li><li>AI assistants</li></ul></div>
+      <div><h3 class="micro sub">Product and analytics</h3><ul><li>Data analytics</li><li>Product strategy</li><li>Data-driven promotion strategy</li></ul></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sec-head"><p class="micro">Learning<span class="rule"></span></p><h2>Educ<em>ation</em></h2></div>
+    <ol class="tl">
+      <li><span class="when">Mar 2026 to Dec 2027</span><div><h3>Master of Information Technology</h3><p>RMIT University, Melbourne</p></div></li>
+      <li><span class="when">Sep 2022 to May 2025</span><div><h3>Bachelor of Engineering, Computer Science (AI and ML)</h3><p>Lokmanya Tilak College of Engineering</p></div></li>
+      <li><span class="when">Jul 2019 to Jun 2022</span><div><h3>Diploma, Information Technology</h3><p>Muchalla Polytechnic</p></div></li>
+    </ol>
+    <h3 class="micro sub">Certifications</h3>
+    <ol class="tl">
+      <li><span class="when">Certificate</span><div><h3>Scientific Computing with Python</h3></div></li>
+      <li><span class="when">Certificate</span><div><h3>Python 101 for Data Science</h3></div></li>
+    </ol>
+    <h3 class="micro sub">Leadership</h3>
+    <ol class="tl" style="margin-bottom:0">
+      <li><span class="when">Jan to Mar 2022</span><div><h3>Campus Ambassador, TRYST</h3><p>IIT Delhi's annual technical festival</p></div></li>
+    </ol>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="micro">Get in touch<span class="rule"></span></p>
+    <h2 class="big">Let's <em>talk</em></h2>
+    <p class="mail" id="mail">siddhantsingh8444@gmail.com</p>
+    <div class="actions">
+      <button class="pill solid" id="copy" type="button">Copy email</button>
+      <a class="pill" href="https://www.linkedin.com/in/siddhant-singh-345097205" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      <a class="pill" href="https://github.com/siddhant8444" target="_blank" rel="noopener">GitHub &#8599;</a>
+    </div>
+  </section>
+
+  <footer><span class="micro">&copy; 2026 Siddhant Singh</span><span class="micro">Melbourne &middot; 112 BPM</span></footer>
+</div>
+
+<script>
+(function () {
+  // Slow deep-house loop (112 BPM), started only when the visitor clicks play
+  var BPM = 112, spb = 60 / BPM, six = spb / 4;
+  var AC = window.AudioContext || window.webkitAudioContext;
+  var ctx = null, master, analyser, lp, delay, noise, timer = null, playing = false, nextTime = 0, step = 0;
+  var chords = [
+    { bass: 55.00,  notes: [220.00, 261.63, 329.63, 392.00] },  // Am7
+    { bass: 43.65,  notes: [174.61, 220.00, 261.63, 329.63] },  // Fmaj7
+    { bass: 65.41,  notes: [261.63, 329.63, 392.00, 493.88] },  // Cmaj7
+    { bass: 49.00,  notes: [196.00, 246.94, 293.66, 329.63] }   // G6
+  ];
+  var btn = document.getElementById('beat'), dot = document.getElementById('dot'), label = document.getElementById('beatlabel');
+
+  function setup() {
+    ctx = new AC();
+    master = ctx.createGain(); master.gain.value = 0.7;
+    analyser = ctx.createAnalyser(); analyser.fftSize = 256; analyser.smoothingTimeConstant = 0.75;
+    master.connect(analyser); analyser.connect(ctx.destination);
+    lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2200; lp.connect(master);
+    delay = ctx.createDelay(1); delay.delayTime.value = six * 3;
+    var fb = ctx.createGain(); fb.gain.value = 0.36;
+    var wet = ctx.createGain(); wet.gain.value = 0.38;
+    delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(lp);
+    noise = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.25), ctx.sampleRate);
+    var d = noise.getChannelData(0);
+    for (var i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+  }
+  function kick(t) {
+    var o = ctx.createOscillator(), g = ctx.createGain();
+    o.frequency.setValueAtTime(115, t);
+    o.frequency.exponentialRampToValueAtTime(42, t + 0.11);
+    g.gain.setValueAtTime(0.8, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.42);
+    o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.45);
+  }
+  function hat(t, vol) {
+    var s = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+    s.buffer = noise; f.type = 'highpass'; f.frequency.value = 8000;
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.07);
+    s.connect(f); f.connect(g); g.connect(lp); s.start(t); s.stop(t + 0.1);
+  }
+  function clap(t) {
+    var s = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+    s.buffer = noise; f.type = 'bandpass'; f.frequency.value = 1500; f.Q.value = 0.8;
+    g.gain.setValueAtTime(0.16, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.18);
+    s.connect(f); f.connect(g); g.connect(lp); g.connect(delay); s.start(t); s.stop(t + 0.2);
+  }
+  function bass(t, f, dur) {
+    var o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.5, t + 0.015);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g); g.connect(master); o.start(t); o.stop(t + dur + 0.05);
+  }
+  function stab(t, notes) {
+    var g = ctx.createGain(), f = ctx.createBiquadFilter();
+    f.type = 'lowpass'; f.frequency.setValueAtTime(1900, t); f.frequency.exponentialRampToValueAtTime(700, t + 0.35);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.07, t + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.42);
+    f.connect(g); g.connect(lp); g.connect(delay);
+    notes.forEach(function (n, i) {
+      var o = ctx.createOscillator();
+      o.type = 'sawtooth'; o.frequency.value = n; o.detune.value = (i % 2 ? 6 : -6);
+      o.connect(f); o.start(t); o.stop(t + 0.5);
+    });
+  }
+  function tick() {
+    while (nextTime < ctx.currentTime + 0.12) {
+      var s = step % 16, bar = Math.floor(step / 16) % 4, c = chords[bar];
+      if (s % 4 === 0) kick(nextTime);
+      if (s === 4 || s === 12) clap(nextTime);
+      if (s % 4 === 2) hat(nextTime, 0.11);
+      if (s % 2 === 1) hat(nextTime, 0.025);
+      if (s % 4 === 2) bass(nextTime, c.bass, six * 3);
+      if (s === 3 || s === 10) stab(nextTime, c.notes);
+      nextTime += six; step++;
+    }
+  }
+  function start() {
+    if (!AC) return;
+    if (!ctx) setup();
+    if (ctx.resume) ctx.resume();
+    nextTime = ctx.currentTime + 0.08; step = 0;
+    timer = setInterval(tick, 25);
+    playing = true;
+    btn.setAttribute('aria-pressed', 'true');
+    dot.innerHTML = '&#10074;&#10074;'; dot.style.fontSize = '7px'; dot.style.paddingLeft = '0';
+    label.textContent = 'Pause';
+  }
+  function stop() {
+    clearInterval(timer); playing = false;
+    btn.setAttribute('aria-pressed', 'false');
+    dot.innerHTML = '&#9654;'; dot.style.fontSize = ''; dot.style.paddingLeft = '';
+    label.textContent = 'Play slow house';
+  }
+  btn.addEventListener('click', function () {
+    try { playing ? stop() : start(); } catch (e) { stop(); }
+  });
+
+  // Copy email
+  var copy = document.getElementById('copy');
+  copy.addEventListener('click', function () {
+    var el = document.getElementById('mail'), text = el.textContent;
+    var done = function () { copy.textContent = 'Copied'; setTimeout(function () { copy.textContent = 'Copy email'; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copy.textContent = 'Press Ctrl/Cmd+C';
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, fallback); }
+    else { fallback(); }
+  });
+
+  // Signal graphic: dots are the signal, the lime line is a smoothed fit through it
+  var cv = document.getElementById('viz'), g2 = cv.getContext('2d');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ROWS = 18, cols = 28, W = 0, H = 0, dpr = 1, lv = [], t0 = 0, freq = null;
+  function size() {
+    var r = cv.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = Math.max(1, Math.round(r.width * dpr)); H = Math.max(1, Math.round(r.height * dpr));
+    cv.width = W; cv.height = H;
+    cols = r.width < 340 ? 16 : (r.width < 460 ? 22 : 28);
+    lv = []; for (var i = 0; i < cols; i++) lv.push(0.5);
+  }
+  function frame(ms) {
+    var t = reduce && !playing ? 1.2 : ms / 1000;
+    if (playing && analyser) {
+      if (!freq) freq = new Uint8Array(analyser.frequencyBinCount);
+      analyser.getByteFrequencyData(freq);
+    }
+    var cw = W / cols, ch = H / ROWS, rad = Math.min(cw, ch) * 0.2, i, r;
+    for (i = 0; i < cols; i++) {
+      var target;
+      if (playing && freq) {
+        var idx = Math.floor(Math.pow(i / cols, 1.5) * 70) + 1;
+        target = Math.min(1, (freq[idx] / 255) * 1.25);
+      } else {
+        target = 0.5 + 0.30 * Math.sin(t * 0.9 + i * 0.42) + 0.10 * Math.sin(t * 1.9 + i * 0.95);
+      }
+      lv[i] += (target - lv[i]) * 0.22;
+    }
+    g2.clearRect(0, 0, W, H);
+    for (i = 0; i < cols; i++) {
+      var lit = Math.round(lv[i] * ROWS);
+      for (r = 0; r < ROWS; r++) {
+        var x = (i + 0.5) * cw, y = H - (r + 0.5) * ch;
+        if (r < lit) { g2.fillStyle = 'rgba(123,146,255,' + (0.35 + 0.65 * (r / ROWS)).toFixed(2) + ')'; }
+        else { g2.fillStyle = 'rgba(255,255,255,0.09)'; }
+        g2.beginPath(); g2.arc(x, y, rad, 0, 6.2832); g2.fill();
+      }
+    }
+    // the "model": a moving-average fit through the signal
+    var pts = [];
+    for (i = 0; i < cols; i++) {
+      var sum = 0, n = 0;
+      for (var k = -3; k <= 3; k++) { var j = i + k; if (j >= 0 && j < cols) { sum += lv[j]; n++; } }
+      pts.push([(i + 0.5) * cw, H - (sum / n) * ROWS * ch - ch * 0.5]);
+    }
+    g2.save();
+    g2.strokeStyle = '#d7f542'; g2.lineWidth = 2.5 * dpr; g2.lineJoin = 'round'; g2.lineCap = 'round';
+    g2.shadowColor = 'rgba(215,245,66,0.7)'; g2.shadowBlur = 14 * dpr;
+    g2.beginPath(); g2.moveTo(pts[0][0], pts[0][1]);
+    for (i = 1; i < pts.length - 1; i++) {
+      var mx = (pts[i][0] + pts[i + 1][0]) / 2, my = (pts[i][1] + pts[i + 1][1]) / 2;
+      g2.quadraticCurveTo(pts[i][0], pts[i][1], mx, my);
+    }
+    g2.lineTo(pts[pts.length - 1][0], pts[pts.length - 1][1]);
+    g2.stroke(); g2.restore();
+    if (!reduce || playing) requestAnimationFrame(frame);
+  }
+  size();
+  requestAnimationFrame(frame);
+  window.addEventListener('resize', size);
+  if (reduce) btn.addEventListener('click', function () { requestAnimationFrame(frame); });
+})();
+</script>
+
+</body>
+</html>
